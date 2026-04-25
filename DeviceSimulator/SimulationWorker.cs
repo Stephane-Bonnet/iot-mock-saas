@@ -20,7 +20,7 @@ namespace DeviceSimulator
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            Console.WriteLine("Simulation will start in 2 seconds.\n");
+            Console.WriteLine("Simulation will start in 2 seconds!\n");
             await Task.Delay(2000, stoppingToken);
 
             var gateways = Enumerable.Range(0, _config.GatewayCount)
