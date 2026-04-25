@@ -3,5 +3,5 @@
 ################################################################################
 
 /.vs
-/DeviceSimulator/bin/Debug/net10.0
+/DeviceSimulator/bin
 /DeviceSimulator/obj
