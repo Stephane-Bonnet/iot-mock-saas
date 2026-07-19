@@ -19,7 +19,7 @@ namespace DeviceSimulator.Models
                 .ToList();
         }
 
-        public async Task RunAsync(CancellationToken token)
+        public async Task RunSimulationAsync(CancellationToken token, int scanIntervalMs)
         {
             try
             {
@@ -31,7 +31,7 @@ namespace DeviceSimulator.Models
                         if (_random.NextDouble() < 0.1)
                             continue;
 
-                        var msg = device.Generate(GatewayId);
+                        var msg = device.CreateFakeMessage(GatewayId);
 
                         // 👉 ici on simulera Kafka plus tard
                         Console.WriteLine(
@@ -39,8 +39,8 @@ namespace DeviceSimulator.Models
                         );
                     }
 
-                    // scan BLE toutes les X ms
-                    await Task.Delay(_random.Next(1000, 3000), token);
+                    // scan BLE toutes les scanIntervalMs ms
+                    await Task.Delay(scanIntervalMs, token);
                 }
             }
             catch (OperationCanceledException)

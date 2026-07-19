@@ -1,3 +1,8 @@
 <Solution>
-  <Project Path="DeviceSimulator/DeviceSimulator.csproj" />
+  <Folder Name="/src/">
+    <Project Path="src/IoTSaaS.Api/IoTSaaS.Api.csproj" />
+    <Project Path="src/IoTSaaS.AppHost/IoTSaaS.AppHost.csproj" />
+    <Project Path="src/IoTSaaS.DeviceSimulator/IoTSaaS.DeviceSimulator.csproj" />
+    <Project Path="src/IoTSaaS.ServiceDefaults/IoTSaaS.ServiceDefaults.csproj" />
+  </Folder>
 </Solution>

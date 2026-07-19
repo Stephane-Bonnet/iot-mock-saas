@@ -16,6 +16,7 @@ namespace DeviceSimulator
         public SimulationWorker(IOptions<SimulationConfig> config)
         {
             _config = config.Value;
+            Console.WriteLine(_config.Display());
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -28,7 +29,7 @@ namespace DeviceSimulator
                 .ToList();
 
             var tasks = gateways
-                .Select(gw => gw.RunAsync(stoppingToken))
+                .Select(gw => gw.RunSimulationAsync(stoppingToken, _config.ScanIntervalMs))
                 .ToList();
 
             try

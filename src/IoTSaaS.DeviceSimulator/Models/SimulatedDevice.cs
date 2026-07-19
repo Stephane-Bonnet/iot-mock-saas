@@ -16,7 +16,7 @@ namespace DeviceSimulator.Models
             _random = new Random(Guid.NewGuid().GetHashCode());
         }
 
-        public IoTMessage Generate(string gatewayId)
+        public IoTMessage CreateFakeMessage(string gatewayId)
         {
             // décharge progressive
             _battery -= 0.005 + _random.NextDouble() * 0.02;
